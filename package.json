@@ -13,7 +13,8 @@
     "typescript": "^5.8.3"
   },
   "scripts": {
-    "dev": "tsx hr.ts"
+    "dev": "tsx hr.ts",
+    "test": "tsx --test tests/**/*.test.ts"
   },
   "keywords": [],
   "author": "",
