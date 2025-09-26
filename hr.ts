@@ -18,6 +18,18 @@ const term = termkit.terminal;
   const allEntries = har.log.entries;
   let filteredEntries = allEntries;
   let selectedRow = 0;
+  let activeQuery = "";
+
+  const renderStatus = () => {
+    term.moveTo(1, term.height);
+    term.eraseLine();
+
+    if (activeQuery) {
+      term.gray(`Filter: ${activeQuery} (press 'c' to clear)`);
+    } else {
+      term.gray("No active filter. Press '/' to search, 'q' to exit.");
+    }
+  };
 
   const renderTable = () => {
     term.clear();
@@ -34,7 +46,10 @@ const term = termkit.terminal;
       });
 
       term.nextLine(1);
-      term.gray("No matches for the current filter. Press '/' to search again.\n");
+      term.gray(
+        "No matches for the current filter. Press '/' to search again.\n"
+      );
+      renderStatus();
       return;
     }
 
@@ -59,6 +74,8 @@ const term = termkit.terminal;
       width: 60,
       fit: true,
     });
+
+    renderStatus();
   };
 
   renderTable();
@@ -114,10 +131,17 @@ const term = termkit.terminal;
       });
     } else if (name === "/") {
       promptForSearch().then((query) => {
-        filteredEntries = filterEntries(allEntries, query);
+        const trimmedQuery = query.trim();
+        activeQuery = trimmedQuery;
+        filteredEntries = filterEntries(allEntries, trimmedQuery);
         selectedRow = 0;
         renderTable();
       });
+    } else if (name === "c" && activeQuery) {
+      activeQuery = "";
+      filteredEntries = allEntries;
+      selectedRow = 0;
+      renderTable();
     }
   });
 })();
