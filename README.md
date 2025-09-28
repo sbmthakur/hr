@@ -20,4 +20,4 @@ Prefer not to install globally? Run it ad hoc:
 npx har-viewer-cli path/to/file.har
 ```
 
-Curious about what is planned next? Check out [ROADMAP.md](ROADMAP.md).
+Curious about what is planned next? Check out the [ROADMAP](https://github.com/sbmthakur/hr/blob/main/ROADMAP.md).
