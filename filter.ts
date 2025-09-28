@@ -3,7 +3,10 @@ import { HarEntry } from "./types";
 /**
  * Narrow HAR entries using a case-insensitive substring check across URL, method, and status.
  */
-export function filterEntries(entries: HarEntry[], rawQuery: string): HarEntry[] {
+export function filterEntries(
+  entries: HarEntry[],
+  rawQuery: string,
+): HarEntry[] {
   const query = rawQuery.trim().toLowerCase();
   if (!query) {
     return entries;

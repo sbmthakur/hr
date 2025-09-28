@@ -1,4 +1,4 @@
-#!/usr/bin/env tsx
+#!/usr/bin/env node
 import termkit from "terminal-kit";
 import { readFile } from "fs/promises";
 import assert from "assert";
@@ -47,7 +47,7 @@ const term = termkit.terminal;
 
       term.nextLine(1);
       term.gray(
-        "No matches for the current filter. Press '/' to search again.\n"
+        "No matches for the current filter. Press '/' to search again.\n",
       );
       renderStatus();
       return;
