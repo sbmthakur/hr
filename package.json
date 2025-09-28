@@ -1,5 +1,5 @@
 {
-  "name": "hr",
+  "name": "har-viewer-cli",
   "version": "1.0.0",
   "description": "Interactive terminal HAR viewer with live filtering",
   "keywords": [
@@ -13,7 +13,7 @@
   "author": "Shubham Thakur",
   "main": "dist/hr.js",
   "bin": {
-    "hr": "./dist/hr.js"
+    "hr": "dist/hr.js"
   },
   "files": [
     "dist",

@@ -2,32 +2,22 @@
 
 ## Getting Started
 
-Install dependencies and launch the sample HAR viewer.
+Install the CLI globally:
 
 ```
-npm install
-npm run dev file.har
+npm install -g har-viewer-cli
 ```
 
-If `tsx` is installed globally, you can run the script directly:
+Then launch a HAR file:
 
 ```
-./hr.ts path/to/file.har
+hr path/to/file.har
 ```
 
-## Roadmap
+Prefer not to install globally? Run it ad hoc:
 
-### Near Term Enhancements
+```
+npx har-viewer-cli path/to/file.har
+```
 
-- **Interactive filtering**: Add a Vim-style `/` command that opens a search prompt and progressively filters rows by URL, method, status, or payload text. Support `n`/`N` to cycle through matches while keeping selection aligned.
-- **Detailed entry view**: Let users press `enter` to open a secondary pane showing request headers, query parameters, and response timing/body snippets with syntax highlighting when possible.
-
-### Medium Term Improvements
-
-- **Status grouping dashboard**: Provide a toggle that displays aggregated counts for 2xx/3xx/4xx/5xx statuses; selecting a group temporarily filters the table.
-- **Export utilities**: Introduce an `e` shortcut for exporting the current entry or filtered set as JSON or ready-to-run `curl` commands for quick reproduction.
-
-### Longer Term Ideas
-
-- **Performance insights**: Calculate slowest endpoints, total duration, and other latency metrics, surfacing the data in a dedicated panel triggered by `p`.
-- **Bookmarking workflow**: Allow marking entries with `m` and jumping between saved bookmarks using `'` + letter, enabling rapid comparisons across related calls.
+Curious about what is planned next? Check out [ROADMAP.md](ROADMAP.md).
