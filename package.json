@@ -1,6 +1,6 @@
 {
   "name": "har-viewer-cli",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Interactive terminal HAR viewer with live filtering",
   "keywords": [
     "har",
